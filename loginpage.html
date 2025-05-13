@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <title>Form Login</title>
+</head>
+<body>
+    <div id="wrapper">
+        <form id="form-login">
+            <h1 class="form-heading">Login</h1>
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" class="form-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" class="form-input" placeholder="Password" required>
+                <div id="eye">
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+            <div class="forget">
+                <label><input type="checkbox" id="remember-me"> Remember Me</label>
+                <label><a href="#">Forget Password</a></label>
+            </div>
+            <input type="submit" value="Login" class="form-submit">
+            <div class="register">
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+            <div class="or">
+                <span>Or</span>
+            </div>
+            <div class="signup-social">
+                <button id="google-login-btn" type="button">
+                    <i class="fab fa-google"></i>
+                    <span class="google-login-text">Sign in with Google</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <!-- Firebase Authentication -->
+    <script type="module" src="Js/login.js"></script>
+</body>
+</html>

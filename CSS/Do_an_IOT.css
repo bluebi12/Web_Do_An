@@ -1,0 +1,263 @@
+/* Định dạng tổng thể cho phần giới thiệu */
+#GioiThieu {
+    position: relative; /* Định vị tương đối để logo căn chỉnh chính xác */
+    text-align: center; /* Căn giữa nội dung khác */
+    padding: 20px; /* Khoảng cách bên trong */
+    width: 80%; /* Độ rộng của phần giới thiệu */
+    margin: 20px auto; /* Căn giữa phần giới thiệu */
+    background: none; /* Loại bỏ nền */
+    border-radius: 0; /* Loại bỏ bo góc */
+    box-shadow: none; /* Loại bỏ hiệu ứng đổ bóng */
+}
+/* Định dạng logo */
+.Logo {
+    width: 120px; /* Điều chỉnh kích thước logo */
+    height: auto; /* Giữ nguyên tỷ lệ */
+    position: absolute; /* Định vị logo tuyệt đối */
+    left: 0; /* Đưa logo sát bên trái */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Dịch chuyển để logo nằm chính giữa chiều dọc */
+    margin-left: 10px; /* Tạo khoảng cách nhỏ với cạnh trái (nếu cần) */
+}
+.text-content {
+    max-width: 80%; /* Giữ văn bản không quá dài */
+}
+/* Tiêu đề chính */
+.title_chinh {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366; /* Xanh đậm */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Tiêu đề phụ */
+.title_phu {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0066cc; /* Xanh nhạt */
+    margin-bottom: 5px;
+}
+
+/* Tiêu đề đồ án */
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #009900; /* Xanh lá */
+    margin-bottom: 15px;
+}
+
+/* Thông tin giáo viên và sinh viên */
+.Ten {
+    font-size: 16px;
+    font-weight: normal;
+    color: #333; /* Xám đậm */
+    margin-bottom: 3px;
+}
+
+
+/* Định dạng tổng thể cho phần hiển thị dữ liệu */
+/* Thiết lập bố cục tổng thể */
+.Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px;
+    background-color: #fff5f5;
+    border-radius: 10px;
+}
+
+/* Định dạng chung cho tiêu đề */
+/* Định dạng chung cho tiêu đề trong phần hiển thị */
+.HienThi h1 {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    flex-basis: 100%; /* Đảm bảo nó nằm trên cùng */
+    text-align: center; /* Căn giữa nội dung */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Tạo khoảng cách dưới */
+}
+.CaiDat h1 {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    flex-basis: 100%; /* Đảm bảo nó nằm trên cùng */
+    text-align: center; /* Căn giữa nội dung */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Tạo khoảng cách dưới */
+}
+/* Căn giữa các box và đảm bảo khoảng cách đều nhau */
+.HienThi, .CaiDat {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Căn giữa các box */
+    align-items: stretch; /* Đảm bảo tất cả các box có cùng chiều cao */
+    text-align: center;
+}
+
+/* Thiết lập kích thước cố định cho box */
+.box {
+    flex: 1 1 160px;
+    max-width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hiệu ứng hover */
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Định dạng nội dung trong box */
+.BoxName {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.BoxData {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Định dạng input */
+.BoxInput {
+    width: 85%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    margin-top: auto; /* Đẩy input xuống dưới cùng */
+    background-color: #fff;
+    color: #333;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.BoxInput:focus {
+    border: 2px solid #3498db;
+    outline: none;
+    box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+//* Điều khiển //*//
+/* Căn giữa tiêu đề h1 */
+h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Định dạng phần điều khiển thiết bị */
+.DieuKhien {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung */
+    margin-top: 20px;
+}
+
+/* Tạo hàng ngang cho các ô điều khiển */
+.box-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Định dạng ô điều khiển */
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hiệu ứng hover */
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Định dạng tên thiết bị */
+.BoxName {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Định dạng công tắc */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #3498db;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+/* Định dạng chế độ Auto/Manual */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
