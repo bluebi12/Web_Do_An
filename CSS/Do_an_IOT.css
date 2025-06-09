@@ -1,102 +1,106 @@
-/* Định dạng tổng thể cho phần giới thiệu */
-#GioiThieu {
-    position: relative; /* Định vị tương đối để logo căn chỉnh chính xác */
-    text-align: center; /* Căn giữa nội dung khác */
-    padding: 20px; /* Khoảng cách bên trong */
-    width: 80%; /* Độ rộng của phần giới thiệu */
-    margin: 20px auto; /* Căn giữa phần giới thiệu */
-    background: none; /* Loại bỏ nền */
-    border-radius: 0; /* Loại bỏ bo góc */
-    box-shadow: none; /* Loại bỏ hiệu ứng đổ bóng */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #333;
 }
-/* Định dạng logo */
-.Logo {
-    width: 120px; /* Điều chỉnh kích thước logo */
-    height: auto; /* Giữ nguyên tỷ lệ */
-    position: absolute; /* Định vị logo tuyệt đối */
-    left: 0; /* Đưa logo sát bên trái */
-    top: 50%; /* Căn giữa theo chiều dọc */
-    transform: translateY(-50%); /* Dịch chuyển để logo nằm chính giữa chiều dọc */
-    margin-left: 10px; /* Tạo khoảng cách nhỏ với cạnh trái (nếu cần) */
-}
-.text-content {
-    max-width: 80%; /* Giữ văn bản không quá dài */
-}
-/* Tiêu đề chính */
-.title_chinh {
-    font-size: 24px;
-    font-weight: bold;
-    color: #003366; /* Xanh đậm */
-    text-transform: uppercase;
-    margin-bottom: 10px;
+/* Định dạng phần giới thiệu */
+.gioiThieuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fffef0;
+    padding: 20px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-bottom: 0px solid #e0e0e0;
 }
 
-/* Tiêu đề phụ */
-.title_phu {
-    font-size: 20px;
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.logo.left {
+    margin-right: 20px;
+}
+
+.logo.right {
+    margin-left: 20px;
+}
+
+.header-text {
+    text-align: center;
+    flex: 1;
+}
+
+.title_chinh {
+    font-size: 36px;
     font-weight: bold;
-    color: #0066cc; /* Xanh nhạt */
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.title_phu {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0066cc;
     margin-bottom: 5px;
 }
 
-/* Tiêu đề đồ án */
-h3 {
-    font-size: 18px;
+.title_doan {
+    font-size: 28px;
     font-weight: bold;
-    color: #009900; /* Xanh lá */
-    margin-bottom: 15px;
+    color: #cc0000; /* đỏ giống ảnh mẫu */
+    margin-bottom: 10px;
 }
 
-/* Thông tin giáo viên và sinh viên */
 .Ten {
-    font-size: 16px;
-    font-weight: normal;
-    color: #333; /* Xám đậm */
-    margin-bottom: 3px;
+    font-size: 24px;
+    color: #333;
+    margin: 2px 0;
+    font-weight: bold;
 }
-
 
 /* Định dạng tổng thể cho phần hiển thị dữ liệu */
 /* Thiết lập bố cục tổng thể */
+/* Container */
 .Container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 40px;
-    padding: 30px;
-    background-color: #fff5f5;
-    border-radius: 10px;
+    padding: 0px;
+    gap: 0;
+    height: auto;
 }
 
-/* Định dạng chung cho tiêu đề */
-/* Định dạng chung cho tiêu đề trong phần hiển thị */
-.HienThi h1 {
-    width: 100%; /* Chiếm toàn bộ chiều rộng */
-    flex-basis: 100%; /* Đảm bảo nó nằm trên cùng */
-    text-align: center; /* Căn giữa nội dung */
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px; /* Tạo khoảng cách dưới */
-}
-.CaiDat h1 {
-    width: 100%; /* Chiếm toàn bộ chiều rộng */
-    flex-basis: 100%; /* Đảm bảo nó nằm trên cùng */
-    text-align: center; /* Căn giữa nội dung */
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px; /* Tạo khoảng cách dưới */
-}
-/* Căn giữa các box và đảm bảo khoảng cách đều nhau */
+/* Các cột hiển thị và cài đặt */
 .HienThi, .CaiDat {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; /* Căn giữa các box */
-    align-items: stretch; /* Đảm bảo tất cả các box có cùng chiều cao */
-    text-align: center;
+  flex: 1;
+  padding: 30px 25px;
+  overflow-y: auto;
+
 }
 
+.HienThi {
+  background: #e97777;
+  box-shadow: inset 0 0 10px #ffcaca66;
+}
+
+.CaiDat {
+  background: #3a4a85;
+  color: rgb(3, 0, 0);
+  box-shadow: inset 0 0 15px #203060cc;
+}
+/* Tiêu đề */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 700;
+  color: inherit;
+}
 /* Thiết lập kích thước cố định cho box */
 .box {
     flex: 1 1 160px;
@@ -152,7 +156,7 @@ h3 {
     box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.2);
 }
 
-//* Điều khiển //*//
+/* Điều khiển //*/
 /* Căn giữa tiêu đề h1 */
 h1 {
     text-align: center;
@@ -167,7 +171,9 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center; /* Căn giữa nội dung */
-    margin-top: 20px;
+    margin-top: 0px;
+    background-color: #92cbec;
+    padding: 20px;
 }
 
 /* Tạo hàng ngang cho các ô điều khiển */

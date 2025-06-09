@@ -7,109 +7,108 @@
     <link rel="stylesheet" href="CSS/Do_an_IOT.css" />
     <title>Đồ Án IOT</title>
 </head>
-
 <body>
-
-    <!-- Giới thiệu -->
-    <div>
+    <!-- Khu vực Giới thiệu -->
+    <div class="Section GioiThieuSection">
         <div id="GioiThieu">
-            <img src="./image/logo_hcmute.png" alt="Example Image" class="Logo" />
-            <h1 class="title_chinh">TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT THÀNH PHỐ HỒ CHÍ MINH</h1>
-            <h2 class="title_phu">ĐỒ ÁN TỐT NGHIỆP</h2>
-            <h3>SỬ DỤNG NĂNG LƯỢNG MẶT TRỜI KẾT HỢP IOT ĐỂ TƯỚI CÂY</h3>
-            <h4 class="Ten">GVHD: Lê Thanh Lâm</h4>
-            <h4 class="Ten">SVTH: Đỗ Thành Đạt - 21142513</h4>
-            <h4 class="Ten">SVTH: Đỗ Công Hoàng Anh - 21142565</h4>
+            <div class="gioiThieuHeader">
+                <img src="./image/logo_hcmute.png" class="logo left" alt="Logo HCMUTE">
+                <div class="header-text">
+                    <h1 class="title_chinh">TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT THÀNH PHỐ HỒ CHÍ MINH</h1>
+                    <h2 class="title_phu">ĐỒ ÁN TỐT NGHIỆP</h2>
+                    <h3 class="title_doan">MÔ HÌNH HỆ THÔNG TƯỚI TIÊU THÔNG MINH SỬ DỤNG NĂNG LƯỢNG MẶT TRỜI</h3>
+                    <p class="Ten">GVHD: TS.Lê Thanh Lâm</p>
+                    <p class="Ten">SVTH: Đỗ Thành Đạt - 21142513</p>
+                    <p class="Ten">SVTH: Đỗ Công Hoàng Anh - 21142065</p>
+                </div>
+            </div>
         </div>
-
-        <div class="Container">
-            <!-- Phần hiển thị giá trị -->
-            <div class="HienThi">
-                <h1>Hiện Thị Các Giá Trị</h1>
+    </div>
+    <div class="Container">
+        <!-- Khu vực Hiển thị dữ liệu -->
+        <div class="HienThi">
+            <h1>DISPLAY SENSOR VALUES</h1>
+            <div class="box-container">
                 <div class="box temperature">
-                    <h2 class="BoxName">🌡️ Nhiệt độ</h2>
+                    <h2 class="BoxName">🌡️ Temperature</h2>
                     <h3 id="temperature" class="BoxData">-- °C</h3>
                 </div>
                 <div class="box Humidity">
-                    <h2 class="BoxName">💧 Độ ẩm không khí</h2>
+                    <h2 class="BoxName">💧 Air Humidity</h2>
                     <h3 id="humidity" class="BoxData">-- %</h3>
                 </div>
                 <div class="box SoilMoisture">
-                    <h2 class="BoxName">🌱 Độ ẩm đất</h2>
+                    <h2 class="BoxName">🌱 Soil Moisture</h2>
                     <h3 id="soilMoisture" class="BoxData">-- %</h3>
                 </div>
                 <div class="box LightIntensity">
-                    <h2 class="BoxName">🔆 Cường độ ánh sáng</h2>
+                    <h2 class="BoxName">🔆 Light Intensity</h2>
                     <h3 id="lightIntensity" class="BoxData">-- lux</h3>
                 </div>
             </div>
-
-            <!-- Phần nhập giá trị cài đặt -->
-            <div class="CaiDat">
-                <h1>Cài Đặt Các Ngưỡng</h1>
+        </div>
+        <!-- Khu vực Cài đặt giá trị -->
+        <div class="CaiDat">
+            <h1>SETTING VALUES</h1>
+            <div class="box-container">
                 <div class="box setting">
-                    <h2 class="BoxName">🌡️ Ngưỡng Nhiệt độ</h2>
+                    <h2 class="BoxName">🌡️ Temperature</h2>
                     <input type="number" id="setTemperature" class="BoxInput" placeholder="Nhập nhiệt độ" />
                     <h3 id="temperatureThreshold" class="BoxData">-- °C</h3>
                 </div>
-
                 <div class="box setting">
-                    <h2 class="BoxName">💧 Ngưỡng Độ ẩm không khí</h2>
+                    <h2 class="BoxName">💧 Air Humidity</h2>
                     <input type="number" id="setHumidity" class="BoxInput" placeholder="Nhập độ ẩm không khí" />
                     <h3 id="humidityThreshold" class="BoxData">-- %</h3>
                 </div>
-
                 <div class="box setting">
-                    <h2 class="BoxName">🌱 Ngưỡng Độ ẩm đất</h2>
+                    <h2 class="BoxName">🌱 Soil Moisture</h2>
                     <input type="number" id="setSoilMoisture" class="BoxInput" placeholder="Nhập độ ẩm đất" />
                     <h3 id="soilMoistureThreshold" class="BoxData">-- %</h3>
                 </div>
-
                 <div class="box setting">
-                    <h2 class="BoxName">🔆 Ngưỡng Cường độ ánh sáng</h2>
+                    <h2 class="BoxName">🔆 Light Intensity</h2>
                     <input type="number" id="setLightIntensity" class="BoxInput" placeholder="Nhập cường độ ánh sáng" />
                     <h3 id="lightIntensityThreshold" class="BoxData">-- lux</h3>
                 </div>
             </div>
         </div>
-
-        <!-- Phần điều khiển công tắc On/Off -->
+    </div>
+    <!-- Khu vực Điều khiển thiết bị -->
+    <div class="Section DieuKhienSection">
         <div class="DieuKhien">
-            <h1>Điều Khiển Thiết Bị</h1>
+            <h1>DEVICE CONTROL</h1>
             <div class="box-container">
                 <div class="box control">
-                    <h2 class="BoxName">🚰 Bơm Tưới</h2>
+                    <h2 class="BoxName">🚰 Irrigation Pump</h2>
                     <label class="switch">
                         <input type="checkbox" id="togglePump" />
                         <span class="slider round"></span>
                     </label>
                 </div>
-
                 <div class="box control">
-                    <h2 class="BoxName">💦 Bơm Phun</h2>
+                    <h2 class="BoxName">💦 Misting Pump</h2>
                     <label class="switch">
                         <input type="checkbox" id="toggleSpray" />
                         <span class="slider round"></span>
                     </label>
                 </div>
-
                 <div class="box control">
-                    <h2 class="BoxName">💡 Đèn</h2>
+                    <h2 class="BoxName">💡 Light</h2>
                     <label class="switch">
                         <input type="checkbox" id="toggleLight" />
                         <span class="slider round"></span>
                     </label>
                 </div>
-
                 <div class="box control">
-                    <h2 class="BoxName">🌀 Quạt</h2>
+                    <h2 class="BoxName">🌀 Fan</h2>
                     <label class="switch">
                         <input type="checkbox" id="toggleFan" />
                         <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="box control">
-                    <h2 class="BoxName">🔄 Chế độ</h2>
+                    <h2 class="BoxName">🔄 Mode</h2>
                     <div class="toggle-container">
                         <span class="mode-label-left">Auto</span>
                         <label class="switch" for="modeSwitch">
@@ -122,10 +121,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Chỉ sử dụng 1 script -->
-    <script type="module" src="Js/Do_an.js"></script>
-
+    <script type="module" src="Js/Do_an.js"></script><!-- Script -->
 </body>
-
 </html>

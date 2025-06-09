@@ -1,14 +1,7 @@
 // Import Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-import {
-    getAuth,
-    GoogleAuthProvider,
-    signInWithRedirect,
-    getRedirectResult,
-    signInWithEmailAndPassword,
-    onAuthStateChanged
+import {getAuth, GoogleAuthProvider,signInWithRedirect, getRedirectResult, signInWithEmailAndPassword,onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-
 // Firebase config
 const firebaseConfig = {
     apiKey: "AIzaSyARDVp4S1gCqthn3VYpKTQJv--Sl_xaqD8",
@@ -20,59 +13,45 @@ const firebaseConfig = {
     appId: "1:656047656204:web:0bde420be3a1f5d8dfcd29",
     measurementId: "G-RZR300WEJ2"
 };
-
 // Khởi tạo Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-
-// Kiểm tra trạng thái đăng nhập khi tải trang
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        window.location.href = "Do_an_IOT.html";  // Đã đăng nhập, chuyển đến trang chính
-    }
-});
-
 // Xử lý đăng nhập bằng email & password
 document.getElementById('form-login').addEventListener('submit', (e) => {
     e.preventDefault(); // Ngăn reload trang
-
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        const user = userCredential.user;
-        alert(`Đăng nhập thành công: ${user.email}`);
-        window.location.href = "Do_an_IOT.html"; // Chuyển hướng sau khi đăng nhập thành công
-    })
-    .catch((error) => {
-        // Kiểm tra lỗi và đưa ra thông báo chi tiết
-        let errorMessage = 'Đăng nhập thất bại. Vui lòng thử lại!';
-        if (error.message.includes('email')) {
-            errorMessage = 'Email không hợp lệ hoặc không tồn tại!';
-        } else if (error.message.includes('password')) {
-            errorMessage = 'Mật khẩu không đúng!';
-        }
-        alert(`Lỗi: ${errorMessage}`);
-        console.error("Login error", error);
-    });
-
+        .then((userCredential) => {
+            const user = userCredential.user;
+            alert(`Đăng nhập thành công: ${user.email}`);
+            window.location.href = "Do_an_IOT.html"; //Chuyển hướng chỉ khi đăng nhập thành công
+        })
+        .catch((error) => {
+            let errorMessage = 'Đăng nhập thất bại. Vui lòng thử lại!';
+            if (error.message.includes('email')) {
+                errorMessage = 'Email không hợp lệ hoặc không tồn tại!';
+            } else if (error.message.includes('password')) {
+                errorMessage = 'Mật khẩu không đúng!';
+            }
+            alert(`Lỗi: ${errorMessage}`);
+            console.error("Login error", error);
+        });
 });
-
 // Đăng nhập bằng Google
 document.getElementById('google-login-btn').addEventListener('click', (e) => {
     e.preventDefault();
     signInWithRedirect(auth, provider);
 });
-
 // Xử lý kết quả sau khi redirect Google
 getRedirectResult(auth)
     .then((result) => {
         if (result) {
             const user = result.user;
             alert(`Chào mừng ${user.displayName}`);
-            window.location.href = "Do_an_IOT.html";  // Chuyển hướng sau khi đăng nhập Google thành công
+            window.location.href = "Do_an_IOT.html";
         }
     })
     .catch((error) => {
