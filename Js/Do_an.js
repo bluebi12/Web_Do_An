@@ -80,10 +80,9 @@ function updateSensorData() {
   onValue(espRef, (snapshot) => {
     const data = snapshot.val();
     if (!data) return;
-
     sensorData = data;
     currentMode = data.mode || 0;
-
+    
     // Cập nhật hiển thị cảm biến
     document.getElementById('temperature').innerText = `${data.nhietdo} °C`;
     document.getElementById('humidity').innerText = `${data.doam} %`;
@@ -105,31 +104,28 @@ function updateSensorData() {
   });
 }
 
-// Lấy dữ liệu thresholds
+// Lấy dữ liệu thresholds cập nhật lên web
 function updateThresholds() {
   const keys = ['temperature', 'humidity', 'soilMoisture', 'lightIntensity'];
-
   keys.forEach(key => {
     onValue(ref(database, `thresholds/${key}`), (snapshot) => {
       const value = snapshot.val();
       if (value !== null) {
         thresholds[key] = value;
 
-        // Cập nhật hiển thị ngưỡng
+        // Cập nhật hiển thị giá trị cài đặt
         const labelMap = {
           temperature: 'temperatureThreshold',
           humidity: 'humidityThreshold',
           soilMoisture: 'soilMoistureThreshold',
           lightIntensity: 'lightIntensityThreshold'
         };
-
         const inputMap = {
           temperature: 'setTemperature',
           humidity: 'setHumidity',
           soilMoisture: 'setSoilMoisture',
           lightIntensity: 'setLightIntensity'
         };
-
         if (document.getElementById(labelMap[key])) {
           let unit = '';
           if (key === 'temperature') unit = ' °C';
@@ -138,7 +134,6 @@ function updateThresholds() {
 
           document.getElementById(labelMap[key]).innerText = value + unit;
         }
-
         if (document.getElementById(inputMap[key])) {
           document.getElementById(inputMap[key]).value = value;
         }
